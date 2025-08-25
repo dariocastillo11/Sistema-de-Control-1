@@ -7,13 +7,13 @@ Escribir las trasnformadas de laplace de las siguientes funciones. Verificar uti
 
 $$
 \begin{aligned}
-g_{1}(t) &= \delta(t) & \qquad 
+g_{1}(t) &= \delta(t) & \\
 g_{5}(t) &= (1+e^{-2t})u(t) \\
-g_{2}(t) &= u(t) & \qquad 
+g_{2}(t) &= u(t) & \\
 g_{6}(t) &= \big(t\sin(2t)+3e^{-10t}\big)u(t) \\
-g_{3}(t) &= e^{-2t}u(t) & \qquad 
+g_{3}(t) &= e^{-2t}u(t) & \\
 g_{7}(t) &= e^{-5(t-2)}u(t-2) \\
-g_{4}(t) &= 7e^{-5t}u(t) & \qquad 
+g_{4}(t) &= 7e^{-5t}u(t) & \\
 g_{8}(t) &= e^{-\alpha t}\cos(\omega t)u(t)
 \end{aligned}
 $$
@@ -115,10 +115,6 @@ subplot(2,7,14); plot(sv, l7(sv)); title('l7 ');
 sub
 
 ```
-![Antitranformada de Laplace](imagen/graficar.png)
-
-
-
 
 
 ## ⚙️ Resultados obtenidos
@@ -137,6 +133,7 @@ G_{7}(s) &= \frac{e^{-2s}}{s+5} \\[6pt]
 G_{8}(s) &= \frac{s+\alpha}{(s+\alpha - i\omega)(s+\alpha + i\omega)}
 \end{aligned}
 $$
+![Antitranformada de Laplace](imagen/graficar.png)
 
 ---
 ## 📝 7) Transformada Inverza
