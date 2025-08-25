@@ -136,16 +136,16 @@ Encontrar las Transformadas Inversas de Laplace de las siguientes funciones.
 Verificar utilizando Matlab. 
 ---
 
-$G_{1}(s) = \frac{2}{s+3} \\[2mm]$ 
-$G_{2}(s) = \frac{1}{s(s+2)(s+3)} \\[2mm]$ 
-$G_{3}(s) = \frac{6s+8}{s(s+1)(s+2)} \\[2mm]$ 
-$G_{4}(s) = \frac{10s}{s^3 + 6s^2 + 11s + 6} \\[2mm]$ 
-$G_{5}(s) = \frac{10}{(s+1)^2(s+3)} \\[2mm]$ 
-$G_{6}(s) = \frac{\omega}{(s+a)^2 + \omega^2} \\[2mm]$ 
-$G_{7}(s) = \frac{9}{2s^2 + 4s + 4} \\[2mm]$ 
-$G_{8}(s) = \frac{2s + 12}{s^2 + 2s + 5} \\[2mm]$ 
-$G_{9}(s) = \frac{2}{s^2 + 4} e^{-5s} \\[2mm]$ 
-$G_{10}(s) = \frac{100}{s(s^2 + 4)} \\[2mm]$ 
+$G_{1}(s) = \frac{2}{s+3} \\$ 
+$G_{2}(s) = \frac{1}{s(s+2)(s+3)} \\
+$G_{3}(s) = \frac{6s+8}{s(s+1)(s+2)} \\$ 
+$G_{4}(s) = \frac{10s}{s^3 + 6s^2 + 11s + 6} \\$ 
+$G_{5}(s) = \frac{10}{(s+1)^2(s+3)} \\$ 
+$G_{6}(s) = \frac{\omega}{(s+a)^2 + \omega^2} \\$ 
+$G_{7}(s) = \frac{9}{2s^2 + 4s + 4} \\$ 
+$G_{8}(s) = \frac{2s + 12}{s^2 + 2s + 5} \\$ 
+$G_{9}(s) = \frac{2}{s^2 + 4} e^{-5s} \\$ 
+$G_{10}(s) = \frac{100}{s(s^2 + 4)} \\$ 
 $G_{11}(s) = \frac{100(s+2)}{(s^2 + 4)(s+1)} e^{-s} $ 
 
 
