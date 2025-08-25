@@ -99,3 +99,48 @@ FT_LC_TOTAL = simplify(FT_CASCADA_1 / (1 + FT_CASCADA_1))
 ```
 ## ⚙️ Resultados obtenidos
 ![](imagen/sistema3sol.png)
+---
+
+### Sistema 4: sistema de lazo cerrado con controlador PID
+![](imagen/sistema4pregunta.png)
+## 💻 Código en Octave
+
+```octave
+# UNIDAD 2 . EJERCICIO NRO 2. sistema 4
+close all; clear all; clc
+pkg load symbolic
+syms ti td s kp t k 
+#DEFINO LOS SISTEMAS:
+GAIN_1 = 1/ti;
+GAIN_2 = td;
+GAIN_0 = kp;
+G1 = k / (t*s+1);
+FT_1 = 1/s;
+FT_2 = s;
+#################
+
+FT_CASCADA_1 = GAIN_1*FT_1
+FT_CASCADA_2 = GAIN_2*FT_2
+FT_CASCADA_3 = GAIN_0*G1
+ADD = simplify(1 + FT_CASCADA_1 + FT_CASCADA_2)
+FT_CASCADA_TOTAL = simplify(ADD * FT_CASCADA_3)
+FT_LC_1 = simplify(FT_CASCADA_TOTAL / (1+FT_CASCADA_TOTAL))
+
+```
+## ⚙️ Resultados obtenidos
+![](imagen/sistema4sol.png)
+
+# 📝 3) 
+## En la figura se muestra el diagrama de bloques de un motor de corriente continua, donde E(s) representa la entrada de tensión, W(s) la salida de velocidad del eje,    I(s) la corriente que circula por el motor y T_L(S) la carga del sistema, que puede verse como una perturbación. Se pide: 
+### 3.1. Determinar las cuatro funciones de transferencia que modelan el sistema.  
+### 3.2. Simular la respuesta del sistema para e(t)=24*u(t)  y T_L(t)=0.01*u(t-2)
+---
+![](imagen/EJ3.png)
+## 💻 Código en Octave
+```octave
+
+```
+## ⚙️ Resultados obtenidos
+![](imagen/)
+
+---

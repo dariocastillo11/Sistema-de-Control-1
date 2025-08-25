@@ -2,7 +2,7 @@
 
 ---
 ## 📝 6) Transformadas de Laplace
-Escribir las trasnformadas de laplace de las siguientes funciones. Verificar utilizando Matlab:
+Escribir las transformadas de laplace de las siguientes funciones. Verificar utilizando Matlab:
 ---
 
 $g_1(t) = \delta(t)$  
