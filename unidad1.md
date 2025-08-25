@@ -5,14 +5,14 @@
 Escribir las trasnformadas de laplace de las siguientes funciones. Verificar utilizando Matlab:
 ---
 
-$g_1(t) = \delta(t)$  
-$g_2(t) = u(t)$  
-$g_3(t) = e^{-2t} u(t)$  
-$g_4(t) = 7 e^{-5t} u(t)$  
-$g_5(t) = (1 + e^{-2t}) u(t)$  
-$g_6(t) = (t \sin(2t) + 3 e^{-10 t}) u(t)$  
-$g_7(t) = e^{-5 (t-2)} u(t-2)$  
-$g_8(t) = e^{-\alpha t} \cos(\omega t) u(t)$  
+$ g_1(t) = \delta(t)$  
+$ g_2(t) = u(t)$  
+$ g_3(t) = e^{-2t} u(t)$  
+$ g_4(t) = 7 e^{-5t} u(t)$  
+$ g_5(t) = (1 + e^{-2t}) u(t)$  
+$ g_6(t) = (t \sin(2t) + 3 e^{-10 t}) u(t)$  
+$ g_7(t) = e^{-5 (t-2)} u(t-2)$  
+$ g_8(t) = e^{-\alpha t} \cos(\omega t) u(t)$  
 
 ---
 
@@ -118,18 +118,16 @@ sub
 
 Las transformadas de Laplace calculadas fueron:
 
-$$
-\begin{aligned}
-G_{1}(s) &= 1 \\[6pt]
-G_{2}(s) &= \frac{1}{s} \\[6pt]
-G_{3}(s) &= \frac{1}{s+2} \\[6pt]
-G_{4}(s) &= \frac{7}{s+5} \\[6pt]
-G_{5}(s) &= \frac{2(s+1)}{s(s+2)} \\[6pt]
-G_{6}(s) &= \frac{4s(s+2) + (s^2+4)}{(s+2)^2 (s^2+4)} \\[6pt]
-G_{7}(s) &= \frac{e^{-2s}}{s+5} \\[6pt]
-G_{8}(s) &= \frac{s+\alpha}{(s+\alpha - i\omega)(s+\alpha + i\omega)}
-\end{aligned}
-$$
+
+$ G_{1}(s) = 1 \\[6pt]$ 
+$ G_{2}(s) = \frac{1}{s} \\[6pt]$ 
+$ G_{3}(s) = \frac{1}{s+2} \\[6pt]$ 
+$ G_{4}(s) = \frac{7}{s+5} \\[6pt]$ 
+$ G_{5}(s) = \frac{2(s+1)}{s(s+2)} \\[6pt]$ 
+$ G_{6}(s) = \frac{4s(s+2) + (s^2+4)}{(s+2)^2 (s^2+4)} \\[6pt]$ 
+$ G_{7}(s) = \frac{e^{-2s}}{s+5} \\[6pt]$ 
+$ G_{8}(s) = \frac{s+\alpha}{(s+\alpha - i\omega)(s+\alpha + i\omega)} $ 
+
 ![Antitranformada de Laplace](imagen/graficar.png)
 
 ---
@@ -137,22 +135,20 @@ $$
 Encontrar las Transformadas Inversas de Laplace de las siguientes funciones. 
 Verificar utilizando Matlab. 
 ---
-$$
-\begin{aligned}
-G_{1}(s) &= \frac{2}{s+3} \\[2mm]
-G_{2}(s) &= \frac{1}{s(s+2)(s+3)} \\[2mm]
-G_{3}(s) &= \frac{6s+8}{s(s+1)(s+2)} \\[2mm]
-G_{4}(s) &= \frac{10s}{s^3 + 6s^2 + 11s + 6} \\[2mm]
-G_{5}(s) &= \frac{10}{(s+1)^2(s+3)} \\[2mm]
-G_{6}(s) &= \frac{\omega}{(s+a)^2 + \omega^2} \\[2mm]
-G_{7}(s) &= \frac{9}{2s^2 + 4s + 4} \\[2mm]
-G_{8}(s) &= \frac{2s + 12}{s^2 + 2s + 5} \\[2mm]
-G_{9}(s) &= \frac{2}{s^2 + 4} e^{-5s} \\[2mm]
-G_{10}(s) &= \frac{100}{s(s^2 + 4)} \\[2mm]
-G_{11}(s) &= \frac{100(s+2)}{(s^2 + 4)(s+1)} e^{-s}
-\end{aligned}
 
-$$
+$ G_{1}(s) = \frac{2}{s+3} \\[2mm]$ 
+$ G_{2}(s) = \frac{1}{s(s+2)(s+3)} \\[2mm]$ 
+$ G_{3}(s) = \frac{6s+8}{s(s+1)(s+2)} \\[2mm]$ 
+$ G_{4}(s) = \frac{10s}{s^3 + 6s^2 + 11s + 6} \\[2mm]$ 
+$ G_{5}(s) = \frac{10}{(s+1)^2(s+3)} \\[2mm]$ 
+$ G_{6}(s) = \frac{\omega}{(s+a)^2 + \omega^2} \\[2mm]$ 
+$ G_{7}(s) = \frac{9}{2s^2 + 4s + 4} \\[2mm]$ 
+$ G_{8}(s) = \frac{2s + 12}{s^2 + 2s + 5} \\[2mm]$ 
+$ G_{9}(s) = \frac{2}{s^2 + 4} e^{-5s} \\[2mm]$ 
+$ G_{10}(s) = \frac{100}{s(s^2 + 4)} \\[2mm]$ 
+$ G_{11}(s) = \frac{100(s+2)}{(s^2 + 4)(s+1)} e^{-s} $ 
+
+
 ---
 ## 💻 Código en Octave
 
