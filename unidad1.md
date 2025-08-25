@@ -5,18 +5,15 @@
 Escribir las trasnformadas de laplace de las siguientes funciones. Verificar utilizando Matlab:
 ---
 
-$$
-\begin{aligned}
-g_{1}(t) &= \delta(t) & \\
-g_{5}(t) &= (1+e^{-2t})u(t) \\
-g_{2}(t) &= u(t) & \\
-g_{6}(t) &= \big(t\sin(2t)+3e^{-10t}\big)u(t) \\
-g_{3}(t) &= e^{-2t}u(t) & \\
-g_{7}(t) &= e^{-5(t-2)}u(t-2) \\
-g_{4}(t) &= 7e^{-5t}u(t) & \\
-g_{8}(t) &= e^{-\alpha t}\cos(\omega t)u(t)
-\end{aligned}
-$$
+$g_1(t) = \delta(t)$  
+$g_2(t) = u(t)$  
+$g_3(t) = e^{-2t} u(t)$  
+$g_4(t) = 7 e^{-5t} u(t)$  
+$g_5(t) = (1 + e^{-2t}) u(t)$  
+$g_6(t) = (t \sin(2t) + 3 e^{-10 t}) u(t)$  
+$g_7(t) = e^{-5 (t-2)} u(t-2)$  
+$g_8(t) = e^{-\alpha t} \cos(\omega t) u(t)$  
+
 ---
 
 ## 💻 Código en Octave
