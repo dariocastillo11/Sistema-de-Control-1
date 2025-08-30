@@ -138,9 +138,147 @@ FT_LC_1 = simplify(FT_CASCADA_TOTAL / (1+FT_CASCADA_TOTAL))
 ![](imagen/EJ3.png)
 ## 💻 Código en Octave
 ```octave
+# UNIDAD 2 . EJERCICIO NRO 3
+close all; clear all; clc
+pkg load control
+pkg load symbolic
+syms s L R KA J B KB
+#s = tf('s');
+#DEFINO LAS VARIABLES:
+#L = 1*10^6#HENRIOS H
+#R = 2#OHMS
+#KA = 0.042 #Nm/A
+#J = 10*10^(-6) #Kgm^2
+#B = 0.30*10^(-5) #N / rad / seg
+#KB = 0.042 # V / rad / seg
+#DEFINO LOS PLANTAS:
+G1 = 1 / (L*s + R);
+G2 = 1 / (J*s + B);
+#DEFINO LOS SISTEMAS
+#FT_TOTAL_1 = W(s) / E(S)
+FT_CASCADA_1 = G1 * KA * G2
+FT_TOTAL_1 = minreal(FT_CASCADA_1 / (1+KB*FT_CASCADA_1))
+
+#FT_TOTAL_1 = feedback(FT_CASCADA_1,KB)
+
 
 ```
 ## ⚙️ Resultados obtenidos
-![](imagen/)
+![](imagen/ej3sol1.png)
 
+---
+CASO PARA ENTRADA TL(S) CON E(S)=0
+W(S)/TL(S)
+```octave
+# UNIDAD 2 . EJERCICIO NRO 3
+# UNIDAD 2 . EJERCICIO NRO 3
+
+close all; clear all; clc
+pkg load control
+pkg load symbolic
+syms s L R KA J B KB
+#s = tf('s');
+#DEFINO LAS VARIABLES:
+#L = 1*10^6#HENRIOS H
+#R = 2#OHMS
+#KA = 0.042 #Nm/A
+#J = 10*10^(-6) #Kgm^2
+#B = 0.30*10^(-5) #N / rad / seg
+#KB = 0.042 # V / rad / seg
+#DEFINO LOS PLANTAS:aa
+G1 = 1 / (L*s + R)
+G2 = 1 / (J*s + B)
+#DEFINO LOS SISTEMAS
+#FT_TOTAL_1 = W(s) / TL(S)
+FT_CASCADA_1 = simplify(G1 * KA * KB)
+FT_TOTAL_1 = simplify(G2 / (1+G2*FT_CASCADA_1))
+
+#FT_TOTAL_1 = feedback(FT_CASCADA_1,KB)
+```
+## ⚙️ Resultados obtenidos
+![](imagen/EJ3CONOTRAENTRADA.png)
+
+---
+
+### EJERCICIO 5. 
+## Encontrar G*(S) de manera tal que los sistemas que se muestran a continuación sean equivalentes.
+
+![](imagen/EJERCICIO5.png)
+## 💻 Código en Octave
+
+```octave
+
+```
+## ⚙️ Resultados obtenidos
+![](imagen/sistema3sol.png)
+---
+---
+
+# Diagramas de Flujo de Señal y Álgebra de Mason
+## 6. Demostrar que los siguientes sistemas son equivalentes.
+
+![](imagen/EJ6MASON.png)
+## 💻 Código en Octave
+
+```octave
+% Sistemas de Control
+% Unidad 2 - Ejercicio 6
+pkg load symbolic
+close all; clear all; clc
+% Definición de las funciones.
+syms G H real
+% Sistema 1.
+M1=G;
+l1=-G*H;
+D=1-l1;
+D1=1;
+FdTS1=M1*D1/D
+% Sistema 2.
+M1=G;
+l1=-G*H;
+D=1-l1;
+D1=1;
+FdTS2=M1*D1/D
+
+```
+## ⚙️ Resultados obtenidos
+![](imagen/EJ6SOL.png)
+---
+---
+
+
+## 7. Demostrar que los siguientes sistemas no son equivalentes.
+
+![](imagen/EJ7.png)
+## 💻 Código en Octave
+
+```octave
+% Sistemas de Control
+% Unidad 2 - Ejercicio 7
+pkg load symbolic
+close all; clear all; clc
+% Definición de las funciones.
+syms G1 G2 G3 H1 H2 H3 real
+% Función de Transferencia del sistema 1.
+M1=G1*G2*G3;
+l1=-G1*H1;
+l2=-G2*H2;
+l3=-G3*H3;
+D=1-(l1+l2+l3)+(l1*l2+l1*l3+l2*l3)-(l1*l2*l3);
+D1=1;
+disp('Función de Transferencia del Sistema 1')
+FdTLCs1=factor(simplify(M1*D1/D),'s')
+% Función de Transferencia del sistema 2.
+M1=G1*G2*G3;
+l1=-G1*H1;
+l2=-G2*H2;
+l3=-G3*H3;
+D=1-(l1+l2+l3)+(l1*l3);
+D1=1;
+disp('Función de Transferencia del Sistema 2')
+FdTLCs2=factor(simplify(M1*D1/D),'s')
+
+```
+## ⚙️ Resultados obtenidos
+![](imagen/SOL7.png)
 ---
