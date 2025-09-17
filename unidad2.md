@@ -390,15 +390,49 @@ FT = (M1*DELTA_K1 + M2*DELTA_K2) / DELTA
 ## 11. A partir de las ecuaciones que modelan matemáticamente el comportamiento dinámico de un motor de corriente continua, dibujar el diagrama de flujo de señal y determinar la función de transferencia entre la velocidad de salida y la tensión de entrada aplicando la fórmula de Mason
 
 ![](imagen/ej11.png)
+
+![](imagen/diagramamasonf.png)
+
 ![](imagen/MASONECVELDIAGRA.png)
+
+![](imagen/boetomen10.png)
+
 ## 💻 Código en Octave
 
 ```octave
 
+close all; clear all; clc
+syms  L K J B R s real
+
+# CAMINOS DIRECTOS:
+K=1;
+
+# GANANCIA DE LOS CAMINOS DIRECTOS
+M1 = 1*(1/L)*(1/s)*(K/J)*(1/s)*1;
+
+# LAZOS:
+L1 = (-R/L)*(1/s);
+L2 = (-B/J)*(1/s);
+L3 = (-K/L)*(1/s)*(K/J)*(1/s);
+
+# VALOR DEL DETERMINANTE
+# TENIENDO EN CUENTA TODO EL DIAGRAMA
+# DETERMINANTE = 1 - SUMATORIA DE GANANCIA DE LOS LAZOS
+#                  + SUMATORIA LAZOS DISJUNTOS DE A 2
+#                  - SUMATORIA LAZOS DISJUNTOS DE A 3 ETC
+# LAZOS DISJUNTOS : "LAZOS QUE NO COMPARTEN NODOS"
+DELTA = 1 - (L1+L2+L3) + (L1*L2);
+
+# GANANCIA DE LOS DELTA_K
+# LO MISMO COMO EL DETERMINANTE PERO TENIENDO EN 
+# CUENTA LOS CAMINOS DIRECTO
+DELTA_K1 = 1 ;
 
 
+# FT = W(s)/E(s) = (M1*DELTA_K1) / DELTA
+FT = (M1*DELTA_K1) / DELTA
 
 ```
 ## ⚙️ Resultados obtenidos
-![](imagen/.png)
+![](imagen/solmen10.png)
 ---
