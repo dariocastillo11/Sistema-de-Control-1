@@ -71,20 +71,23 @@ FdTLCs2=factor(simplify(M1*D1/D),'s')
 
 ### Sistema 1: 
 ![](../imagen/mason10con.png)
+lazos y caminos directos:
 ![](../imagen/e10ma.png)
-
+las 3 salidas paracada para las 3 distintas FT que utilizan mismo determinante:
+![](../imagen/otrassalidas.png)
 ## 💻 Código en Octave
 
 ```octave
 close all; clear all; clc
+pkg load symbolic
 syms  G1 G2 G3 G4 H1 H2 H3 real
 
 # CAMINOS DIRECTOS:
-K=2;
+a_K=2;
 
 # GANANCIA DE LOS CAMINOS DIRECTOS
-M1 = 1*G1*G2*G3;
-M2 = 1*G4*G3;
+a_M1 = 1*G1*G2*G3;
+a_M2 = 1*G4*G3;
 
 # LAZOS:
 L1 = -H1*G1;
@@ -103,17 +106,57 @@ DELTA = 1 - (L1+L2+L3+L4) + (L1*L2);
 # GANANCIA DE LOS DELTA_K
 # LO MISMO COMO EL DETERMINANTE PERO TENIENDO EN 
 # CUENTA LOS CAMINOS DIRECTO
-DELTA_K1 = 1 ;
-DELTA_K2 = 1;
+a_DELTA_K1 = 1 ;
+a_DELTA_K2 = 1;
 
 # FT = Y5 / Y1 = (M1*DELTA_K1 + M2*DELTA_K2) / DELTA
-FT = (M1*DELTA_K1 + M2*DELTA_K2) / DELTA
+disp("FT = Y5 / Y1")
+a_FT = (a_M1*a_DELTA_K1 + a_M2*a_DELTA_K2) / DELTA;
+disp(a_FT)
+###########################
+# FT = Y4 / Y1
 
+# CAMINOS DIRECTOS
+b_K =2;
 
+# GANANCIA DE LOS CAMINOS DIRECTOS
+b_M1 = 1*G1*G2*1;
+b_M2 = 1*G4*1;
+
+# LAZOS Y DEETERMINANTES MISMO PARA EL SISTEMA
+# ES "DELTA" CALCULADO ANTERIORMENTE
+
+# GANANCIA DE LOS DELTA_K
+b_DELTA_K1 = 1;
+b_DELTA_K2 = 1;
+
+# FT = Y4 / Y1 = (M1*DELTA_K1 + M2*DELTA_K2) / DELTA
+disp("FT = Y4 / Y1")
+b_FT = (b_M1*b_DELTA_K1 + b_M2*b_DELTA_K2) / DELTA;
+disp(b_FT)
+##############################
+# FT = Y2 / Y1
+
+# CAMINOS DIRECTOS 
+c_K = 1;
+
+# GANANCIA DE LOS CAMINOS DIRECTOS
+c_M1 = 1;
+
+# LAZOS Y DEETERMINANTES MISMO PARA EL SISTEMA
+# ES "DELTA" CALCULADO ANTERIORMENTE
+
+# GANANCIA DE LOS DELTA_K
+c_DELTA_K1 = 1 - (L2);
+
+# FT = Y2 / Y1 = (M1*DELTA_K1) / DELTA
+disp("FT = Y2 / Y1")
+c_FT = (c_M1*c_DELTA_K1) / DELTA;
+disp(c_FT)
 
 ```
 ## ⚙️ Resultados obtenidos
-![](../imagen/SOL10.png)
+![](../imagen/las3ftt¿masin.png)
 
 ### Y2/Y1   Y4/Y1
 
