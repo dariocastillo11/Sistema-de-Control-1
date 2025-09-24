@@ -137,3 +137,148 @@ step(G2,G5,0.25);grid minor;
 ## ⚙️ Resultados obtenidos
 ![](../imagen/GRAFICAEJ3COM.png)
 ---
+
+---
+# EJERCICIO 4
+
+
+![](../imagen/ej4cp2.png)
+## 💻 Código en Octave
+
+```octave
+clear all; clc; close all;
+pkg load control;
+pkg load symbolic;
+
+syms U C Y A F X E D B s real
+
+eq1 = U - C*Y == A*X + F*s*X;
+eq2 = E*s*Y - D*X + F*Y == 0;
+Sol = solve(eq1,eq2,U,Y);
+disp('Función de Transferencia del Sistema: ')
+G = factor(Sol.Y/Sol.U,s,'s')
+%Valores:
+A=56;
+B=78;
+C=32;
+D=18;
+E=34;
+F=22;
+%Función de Transferencia con valores:
+G = eval(G)
+s = tf('s');
+G = 18/(748*s^2+2388*s+1808);
+pole(G) %Polos:
+%Para una entrada escalón unitario: TVF
+disp('Valor Regimen:')
+Vf=18/1808#da 0.0099558
+#suponer aprximado con 0.01
+step(G); %Graficamos
+```
+## ⚙️ Resultados obtenidos
+![](../imagen/ftej4p2.png)
+---
+
+---
+# EJERCICIO 5
+
+
+![](../imagen/ej5p2.png)
+## 💻 Código en Octave
+
+```octave
+clear all; clc; close all;
+pkg load control;
+pkg load symbolic;
+
+syms U C Y A F X E D B s real
+
+eq1 = U - C*Y == A*X + F*s*X;
+eq2 = E*s*Y - D*X + B*Y == 0;
+Sol = solve(eq1,eq2,U,Y);
+disp('Función de Transferencia del Sistema: ')
+G = factor(Sol.Y/Sol.U,s,'s')
+%Valores:
+A=60;
+B=3;
+C=70;
+D=70;
+E=64;
+F=4;
+%Función de Transferencia con valores:
+G = eval(G)
+s = tf('s');
+G = D/(A*B + C*D + E*F*s^2 + s*(A*E +B*F));
+pole(G) %Polos:
+%Para una entrada escalón unitario: TVF
+disp('Valor Regimen:')
+Vf=D/(A*B + C*D + E*F*0^2 + 0*(A*E +B*F))
+step(G); %Graficamos
+```
+## ⚙️ Resultados obtenidos
+![](../imagen/SOLEJ5P1.png)
+---
+
+
+---
+# EJERCICIO 6
+
+
+![](../imagen/EJ5P1W.png)
+## 💻 Código en Octave
+
+```octave
+clear all; clc; close all;
+pkg load control;
+pkg load symbolic;
+syms K R L I s X Y V real
+eq1=K*s*X+R*I+L*s*I==V;
+eq2=(s^2)*X-X-I==0;
+Sol=solve(eq1,eq2,V,X);
+disp('Función de Transferencia del Sistema: ')
+G=factor(Sol.X/Sol.V,s,'s')
+# Valores:
+R=10;
+L=0.1;
+K=10;
+# Función de Transferencia con valores:
+s=tf('s');
+FT = 1 / ( L*s^3 + R*s^2 - R + s*(K-L)  )
+
+pole(FT)
+
+# El sistema es inestable
+```
+## ⚙️ Resultados obtenidos
+![](../imagen/SOL6EJP1.png)
+---
+
+
+---
+# EJERCICIO 7
+
+
+![](../imagen/)
+## 💻 Código en Octave
+
+```octave
+
+```
+## ⚙️ Resultados obtenidos
+![](../imagen/)
+---
+
+
+---
+# EJERCICIO 8
+
+
+![](../imagen/)
+## 💻 Código en Octave
+
+```octave
+
+```
+## ⚙️ Resultados obtenidos
+![](../imagen/)
+---
