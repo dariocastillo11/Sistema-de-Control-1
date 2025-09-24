@@ -258,14 +258,67 @@ pole(FT)
 # EJERCICIO 7
 
 
-![](../imagen/)
+![](../imagen/ej7p2e.png)
 ## 💻 Código en Octave
 
 ```octave
+clear all; clc; close all;
+pkg load symbolic;
+syms s real
 
+# caminos directos:
+K = 2;
+# ganancia de los caminos directos:
+M1 = 8*(1/s)*( (s+10)/(s+100) )*(1/s)*4;
+M2 = 8*(1/s)*( (s+10)/(s+100) )*10*(1/s)*4;
+
+# LAZOS
+L1 = -1*(1/s);
+L2 = -2*(1/s);
+
+# DETERMINANTE
+DELTA = 1 - (L1+L2) + (L1*L2);
+
+# DETERMINANTE DELTA_K
+DELTA_K1 = 1;
+DELTA_K2 = 1;
+
+# Y(S) / R(S) =
+FT = simplify((M1*DELTA_K1 + M2*DELTA_K2)/ DELTA)
+
+% Expandir y simplificar completamente
+FT_expanded = expand(FT);
+FT_simplified = simplify(FT_expanded);
+
+% Obtener numerador y denominador por separado
+[num, den] = numden(FT_simplified);
+
+% Expandir numerador y denominador
+num_expanded = expand(num);
+den_expanded = expand(den);
+
+% Multiplicar numerador y denominador por s^3 para eliminar fracciones
+num_final = expand(num_expanded * s^3);
+den_final = expand(den_expanded * s^3);
+
+% Simplificar factores comunes
+FT_final = simplify(num_final / den_final);
+
+% Obtener la forma final
+[num_clean, den_clean] = numden(FT_final);
+
+disp('Numerador expandido:');
+disp(expand(num_clean));
+
+disp('Denominador expandido:');
+disp(expand(den_clean));
+
+disp('Función de transferencia final C(s)/R(s):');
+disp('Numerador:'), disp(collect(expand(num_clean), s));
+disp('Denominador:'), disp(collect(expand(den_clean), s));
 ```
 ## ⚙️ Resultados obtenidos
-![](../imagen/)
+![](../imagen/solej7p1.png)
 ---
 
 
