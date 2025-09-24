@@ -7,9 +7,11 @@
 ```octave
 % Unidad N° 3 Ejercicio 1
 close all; clear all; clc
+
 % Ec Dif:
 % 5DDy+2Dy+3y-5Dx-x=0
 % 1.1 Determinar Y(s)/X(s)
+
 % Primero:
 % y(t) -> Y(s)
 % Dy(t) -> sY(s)
@@ -17,13 +19,16 @@ close all; clear all; clc
 % x(t) -> X(s)
 % Dx(t) -> sX(s)
 % 5s^2Y(s)+2sY(s)+3Y(s)=5sX(s)+X(s)
+
 % Segundo:
 % Y(s)(5s^2+2s+3)=X(s)(5s+1)
+
 % Tercero:
 % Y(s)(5s^2+2s+3)/X(s)=(5s+1)
 % Y(s)/X(s)=(5s+1)/(5s^2+2s+3)
 s=tf('s');
 Ys_Xs=(5*s+1)/(5*s^2+2*s+3)
+
 % 1.2 Determinar la estabilidad.
 p=pole(Ys_Xs);
 if real(p)<0

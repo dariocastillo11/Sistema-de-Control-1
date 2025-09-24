@@ -39,3 +39,42 @@ title('Todas las Respuestas al Escalón');
 
 ---
 
+## Identificación de Sistemas de Primer Orden 
+### 8. Determinar la Función de transferencia de los sistemas cuyas respuestas temporales al escalón unitario se muestran a continuación. Validar usando Octave.
+
+### a) Sistema 1: 
+
+![](../imagen/sistema1un4.png)
+## 💻 Código en Octave
+
+```octave
+close all; clear all; clc;
+pkg load control
+
+#s = tf('s');
+
+# ganancia estatica
+k=1;
+#tiempo de establecimiento
+
+#valor de regimmen = 1
+#entonces el valor de establecimiento
+# es 0.98*valorde regimen
+#valor de estaleciemto=0.98
+
+#por lo que tiempod e establecmiento 
+#cuando tengo un valor de estableciemiento
+#de 0.98 es
+T_establecimiento = 0.00043
+
+# tau es T_establecimiento/4 = 
+Tau = T_establecimiento/4;
+G = tf(k,[Tau 1])
+step(G,0.0008);grid
+```
+## ⚙️ Resultados obtenidos
+![](../imagen/)
+![](../imagen/)
+
+---
+
