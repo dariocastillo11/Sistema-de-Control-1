@@ -82,7 +82,7 @@ D_V = simplify(s.D/s.V)
 # me devuelve una ecuacion
 # de esa ecuacion simplificada remplazo valores 
 J = 0.000002 ; # kg*m^2
-m = 0.25; # g
+m = 0.250; # kg
 t = 0.002; # segundos
 R = 0.03; # metros
 L = 0.450; # metros
